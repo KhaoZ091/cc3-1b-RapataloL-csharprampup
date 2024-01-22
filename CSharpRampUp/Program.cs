@@ -106,7 +106,9 @@
             Console.WriteLine("input: ");
             int max_row = Convert.ToInt32(Console.ReadLine());
             int a = 1;
-
+            if (max_row < 0)
+                { Console.Write("Invalid input"); }
+            else {
             for (int row = 1; row <= max_row; row++)
             {
                 for (int col = 1; col <= row; ++col)
@@ -117,6 +119,7 @@
                 }
                 Console.WriteLine();
                 a = 1;
+            }
             }
             //this is the pattern adder
             Console.Write("Enter a number: ");
@@ -135,7 +138,9 @@
             Console.WriteLine("input: ");
             int max_rows = Convert.ToInt32(Console.ReadLine());
             int b = 1;
-
+            if (b < 0)
+            { Console.Write("Invalid input"); }
+            else {
             for (int row = 1; row <= max_rows; max_rows--)
             {
                 for (int col = 1; col <= max_rows; ++col)
@@ -147,7 +152,7 @@
                 Console.WriteLine();
                 b = 1;
             }
-
+            }
         }
     }
 }
