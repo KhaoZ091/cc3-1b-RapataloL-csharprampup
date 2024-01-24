@@ -1,4 +1,4 @@
-﻿namespace CSharpRampUp
+namespace CSharpRampUp
 {
     internal class Program
     {
@@ -50,65 +50,20 @@
             Console.WriteLine("The Average age is: " + Average_age);
 
             //Storymaking
-            {
-                string name, character_class, weapon, weapon_name, weapon_ability, special_ability;
+            string story = @"In a place called Steinberg was a Knight named Alexander.
+                Alexander was said to have slain the all-powerful Dark Mage, Morgan.
+                Alexander's preferred weapon was swords in which one of it was named, Excalibur.
+                The weapon named Excalibur was blessed with the ability Decisive Blow, which was said to do devastating damage to the dark mage.
+                Alexander's final attack was said to be his special ability, and it was called Justice Slash. This ability caused such destruction that it was seen through the whole land of Sindria.
+                As Alexander slayed the mighty dark mage, the power of Sindria once again flourished as there is no one to take it from them anymore.";
+            Console.WriteLine(story);
 
-                do
-                {
-                    Console.WriteLine("Create a name for your character: ");
-                    name = Console.ReadLine();
-                } while (string.IsNullOrEmpty(name));
-
-                do
-                {
-                    Console.WriteLine("What is the class of this character (e.g., knight): ");
-                    character_class = Console.ReadLine();
-                } while (string.IsNullOrEmpty(character_class));
-
-                do
-                {
-                    Console.WriteLine("What type of weapon are you using?: ");
-                    weapon = Console.ReadLine();
-                } while (string.IsNullOrEmpty(weapon));
-
-                do
-                {
-                    Console.WriteLine("What would be the name of your weapon?: ");
-                    weapon_name = Console.ReadLine();
-                } while (string.IsNullOrEmpty(weapon_name));
-
-                do
-                {
-                    Console.WriteLine("Create a name for your weapon's ability: ");
-                    weapon_ability = Console.ReadLine();
-                } while (string.IsNullOrEmpty(weapon_ability));
-
-                do
-                {
-                    Console.WriteLine("What would be the name of your special ability?: ");
-                    special_ability = Console.ReadLine();
-                } while (string.IsNullOrEmpty(special_ability));
-
-                Console.WriteLine($"In a place called Steinberg was a {character_class} named {name}.");
-                Console.ReadKey();
-                Console.WriteLine($"{name} was said to have slain the all-powerful Dark Mage, Morgan.");
-                Console.ReadKey();
-                Console.WriteLine($"{name}'s preferred weapon was {weapon}s in which one of it was named, {weapon_name}.");
-                Console.ReadKey();
-                Console.WriteLine($"The weapon named {weapon_name} was blessed with the ability {weapon_ability}, which was said to do devastating damage to the dark mage.");
-                Console.ReadKey();
-                Console.WriteLine($"{name}'s final attack was said to be his special ability, and it was called {special_ability}. This ability caused such destruction that it was seen through the whole land of Sindria.");
-                Console.WriteLine($"As {name} slayed the mighty dark mage, the power of Sindria once again flourished as there is no one to take it from them anymore.");
-            }
-
-            //this is the rigt triangle pattern
+            //this is the right triangle pattern
             Console.WriteLine("-----------------------------");
             Console.WriteLine("input: ");
             int max_row = Convert.ToInt32(Console.ReadLine());
             int a = 1;
-            if (max_row < 0)
-                { Console.Write("Invalid input"); }
-            else {
+
             for (int row = 1; row <= max_row; row++)
             {
                 for (int col = 1; col <= row; ++col)
@@ -120,13 +75,13 @@
                 Console.WriteLine();
                 a = 1;
             }
-            }
             //this is the pattern adder
             Console.Write("Enter a number: ");
             if (int.TryParse(Console.ReadLine(), out int n))
             {
                 int sum = 0;
-                for (int i = 1; i <= n; sum += i, Console.Write(i + (i++ < n ? "+" : ""))) ;
+                for (int i = 1; i <= n; sum += i, 
+                Console.Write(i + (i++ < n ? "+" : ""))) ;
                 Console.WriteLine($"\nOutput: {sum}");
             }
             else
@@ -138,21 +93,24 @@
             Console.WriteLine("input: ");
             int max_rows = Convert.ToInt32(Console.ReadLine());
             int b = 1;
-            if (b < 0)
-            { Console.Write("Invalid input"); }
-            else {
-            for (int row = 1; row <= max_rows; max_rows--)
-            {
-                for (int col = 1; col <= max_rows; ++col)
-                {
-                    Console.Write(b);
-                    b++;
 
+            if (b < 0)
+                { Console.Write("Invalid input"); }
+            else 
+            {
+                for (int row = 1; row <= max_rows; max_rows--)
+                {
+                    for (int col = 1; col <= max_rows; ++col)
+                    {
+                        Console.Write(b);
+                        b++;
+
+                    }
+                    Console.WriteLine();
+                    b = 1;
                 }
-                Console.WriteLine();
-                b = 1;
             }
-            }
+
         }
     }
 }
